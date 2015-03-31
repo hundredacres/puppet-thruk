@@ -19,14 +19,20 @@
 # Author Karen Harutin <karen@inutis.eu
 #
 #
-class thruk {
+class thruk (
+) inherits thruk::params {
+
+  if $thruk::params::linux {
 
   include thruk::package
-  include thruk::config	
+  include thruk::config
+  include thruk::mod_fcgid
   include thruk::service
 
-  Class['thruk::package'] ->
-  Class['thruk::config']  ->
+  Class['thruk::mod_fcgid'] ->
+  Class['thruk::package']   ->
+  Class['thruk::config']    ->
   Class['thruk::service']
 
+  }
 }

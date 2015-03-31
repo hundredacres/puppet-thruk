@@ -10,16 +10,16 @@
 #
 # Sample Usage: include thruk::config
 #
-class rkhunter::config {
+class thruk::config {
 
 
   file {
-    $rkhunter::params::configThrukConf:
+    $thruk::params::configThrukConf:
       ensure  => present,
-      mode    => '0640',
+      mode    => '0644',
       owner   => root,
       group   => root,
-      path    => $rkhunter::params::configRkhunterConf,
+      path    => $thruk::params::configThrukConf,
       content => template($thruk::params::configThrukConfTemplate);
   }
 

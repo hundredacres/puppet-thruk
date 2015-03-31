@@ -8,7 +8,6 @@ class thruk::package {
   }
 
   package { $thruk::params::packageCommon:
-    ensure  => installed,
     require =>Yumrepo['thruk'],
   }
 
