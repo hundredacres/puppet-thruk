@@ -12,7 +12,7 @@ class thruk::package {
   }
 
   package { $thruk::params::packageCommon:
-    require =>Yumrepo['thruk'],
+    require =>Yumrepo['pulp'],
   }
 
 }
