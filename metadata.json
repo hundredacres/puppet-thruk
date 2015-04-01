@@ -1,0 +1,12 @@
+{
+  "name": "puppet-thruk",
+  "version": "0.1.0",
+  "author": "karen09",
+  "source": "https://github.com/karen09/puppet-thruk.git",
+  "project_page": "https://thruk.com",
+  "issues_url": "https://github.com/karen09/puppet-thruk/issues",
+  "operatingsystem_support": [
+    { "operatingsystem": "RedHat", "operatingsystemrelease": [ "6.0"] },
+    { "operatingsystem": "CentOS", "operatingsystemrelease": [ "6.0"] },
+  ],
+}
