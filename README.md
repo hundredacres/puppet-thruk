@@ -110,6 +110,8 @@ Testing on other platforms has been light and cannot be guaranteed.
 
 ##Login
 
-http://localhost/thruk/    thruk web-interface
-login   :thrukadmin
-passwrd :thrukadmin
+*http://localhost/thruk/
+*ex. http://191.168.11.11/thruk/
+
+*login :thrukadmin
+*passwrd :thrukadmin
