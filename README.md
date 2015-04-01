@@ -110,8 +110,8 @@ Testing on other platforms has been light and cannot be guaranteed.
 
 ##Login
 
-*http://localhost/thruk/
-*ex. http://191.168.11.11/thruk/
+* http://localhost/thruk/
+* ex. http://191.168.11.11/thruk/
 
-*login :thrukadmin
-*passwrd :thrukadmin
+* login :thrukadmin
+* passwrd :thrukadmin
