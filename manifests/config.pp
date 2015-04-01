@@ -19,7 +19,6 @@ class thruk::config {
       mode    => '0644',
       owner   => root,
       group   => root,
-      path    => $thruk::params::configThrukConf,
       content => template($thruk::params::configThrukConfTemplate);
   }
 

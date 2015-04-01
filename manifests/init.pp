@@ -32,15 +32,15 @@ class thruk (
 
   if $thruk::params::linux {
 
-  include thruk::package
-  include thruk::config
-  include thruk::mod_fcgid
-  include thruk::service
-
-  Class['thruk::mod_fcgid'] ->
-  Class['thruk::package']   ->
-  Class['thruk::config']    ->
-  Class['thruk::service']
+    include thruk::package
+    include thruk::config
+    include thruk::mod_fcgid
+    include thruk::service
+  
+    Class['thruk::mod_fcgid'] ->
+    Class['thruk::package']   ->
+    Class['thruk::config']    ->
+    Class['thruk::service']
 
   }
 }
