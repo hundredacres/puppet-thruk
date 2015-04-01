@@ -20,6 +20,14 @@
 #
 #
 class thruk (
+
+  $peer_name      = $thruk::params::peer_name,
+  $peer_type      = $thruk::params::peer_type,
+  $peer_path      = $thruk::params::peer_path,
+  $core_conf      = $thruk::params::core_conf,
+  $obj_check_cmd  = $thruk::params::obj_check_cmd,
+  $obj_reload_cmd = $thruk::params::obj_reload_cmd,
+
 ) inherits thruk::params {
 
   if $thruk::params::linux {

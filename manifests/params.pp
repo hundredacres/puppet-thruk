@@ -27,4 +27,13 @@ class thruk::params {
       $linux = false
     }
   }
+
+
+  $peer_name      = 'Icinga'
+  $peer_type      = 'livestatus'
+  $peer_path      = 'localhost:6557'
+  $core_conf      = '/etc/icinga/icinga.cfg'
+  $obj_check_cmd  = '/etc/init.d/icinga configcheck'
+  $obj_reload_cmd = '/etc/init.d/icinga reload'
+
 }
