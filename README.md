@@ -61,7 +61,7 @@ include '::thruk'
 ###Classes
 
 * thruk: Main class, includes all the rest.
-* thruk::p\'ackage\': Handles the packages.
+* thruk::package: Handles the packages.
 * thruk::config: Handles the configuration file.
 * thruk::service: Handles the thruk service.
 * thruk::mod_fcgid: Handles dependency of thruk package.
