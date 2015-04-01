@@ -1,4 +1,4 @@
-#thruk
+#Thruk
 
 ####Table of Contents
 
@@ -15,9 +15,9 @@
 
 ##Overview
 
-The thruk module provides the installation procedure for thruk including the thruk.conf file as template.
-If you have EPEL already activated, the yumrepo['mod_epel'] is not necessary.
-yumrepo['mod_epel'] you can find [here](manifests/mod_fcgid.pp)
+*The thruk module provides the installation procedure for thruk including the thruk.conf file as template.
+*If you have EPEL already activated, the yumrepo['mod_epel'] is not necessary.
+*yumrepo['mod_epel'] you can find [here](manifests/mod_fcgid.pp)
 
 ##Module Description
 
@@ -34,7 +34,7 @@ The thruk module provides a thruk package which can connect different backends a
 
 ###Beginning with thruk
 
-include '::thruk' is enough to get you up and running if the parameters point to
+Include '::thruk' is enough to get you up and running if the parameters point to
 proper values. If you wish to pass in parameters like which servers to use then you
 can use:
 
@@ -61,7 +61,7 @@ include '::thruk'
 ###Classes
 
 * thruk: Main class, includes all the rest.
-* thruk::package: Handles the packages.
+* thruk::p\'ackage\': Handles the packages.
 * thruk::config: Handles the configuration file.
 * thruk::service: Handles the thruk service.
 * thruk::mod_fcgid: Handles dependency of thruk package.
@@ -110,6 +110,6 @@ Testing on other platforms has been light and cannot be guaranteed.
 
 ##Login
 
-* http://localhost/thruk/      thruk web-interface**
-* login   :thrukadmin
-* passwrd :thrukadmin
+http://localhost/thruk/    thruk web-interface
+login   :thrukadmin
+passwrd :thrukadmin
