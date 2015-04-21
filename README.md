@@ -92,9 +92,9 @@ Set obj_check_cmd path for backend.
 
 ####`obj_reload_cmd `
 
-Set obj_reload_cmd path gor backend 
+Set obj_reload_cmd path for backend 
 
-####`other option`
+##other option
 
 Provisionally that's all parameters which is available.
 
@@ -111,7 +111,7 @@ Testing on other platforms has been light and cannot be guaranteed.
 ##Login
 
 * http://localhost/thruk/
-* ex. http://191.168.11.11/thruk/
+* example: http://191.168.11.11/thruk/
 
 * login :thrukadmin
 * passwrd :thrukadmin
