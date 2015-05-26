@@ -29,7 +29,7 @@ class thruk::config {
     notify => Exec['regenerate_htpasswd'],
   }
   exec { 'regenerate_htpasswd':
-    command => "htpasswd -bp  /etc/thruk/htpasswd ${thruk::params::thrukadminuser} ${thruk::params::thrukadmin_pass}",
+    command => "htpasswd -bm  /etc/thruk/htpasswd ${thruk::params::thrukadminuser} ${thruk::params::thrukadmin_pass}",
     unless  => "egrep '^${thruk::params::thrukadminuser}:' /etc/thruk/htpasswd && grep ${thruk::params::thrukadminuser}:\$(mkpasswd -S \$(egrep '^${thruk::params::thrukadminuser}:' /etc/thruk/htpasswd |cut -d : -f 2 |cut -c-2) ${thruk::params::thrukadminpass}) /etc/thruk/htpasswd",
     path    => '/bin:/sbin:/usr/bin:/usr/sbin',
   }
