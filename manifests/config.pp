@@ -21,5 +21,14 @@ class thruk::config {
       group   => root,
       content => template($thruk::params::configThrukConfTemplate);
   }
-
+  file { '/etc/thruk/htpasswd':
+    ensure => present,
+    mode   => '0644',
+    owner  => 'apache',
+    group  => 'apache',
+    notify => Exec['regenerate_htpasswd'],
+  }
+  exec { 'regenerate_htpasswd':
+    command => "/usr/bin/htpasswd -bp  /etc/thruk/htpasswd ${thruk::params::thrukadminuser} ${thruk::params::thrukadmin_pass}",
+  }
 }
