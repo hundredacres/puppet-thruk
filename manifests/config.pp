@@ -12,6 +12,7 @@
 #
 class thruk::config {
   $default_admin = $thruk::params::default_admin
+  $htpasswd_file = $thruk::params::htpasswd_file
 
   file {
     $thruk::params::configThrukConf:
