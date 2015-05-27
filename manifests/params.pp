@@ -22,6 +22,7 @@ class thruk::params {
       # Config definition
       $configThrukConf = '/etc/thruk/thruk.conf'
       $configThrukConfTemplate = 'thruk/etc/thruk.conf.erb'
+      $htpasswd_file = '/etc/thruk/htpasswd'
     }
     default  : {
       $linux = false
@@ -35,6 +36,7 @@ class thruk::params {
   $core_conf       = '/etc/icinga/icinga.cfg'
   $obj_check_cmd   = '/etc/init.d/icinga configcheck'
   $obj_reload_cmd  = '/etc/init.d/icinga reload'
-  $thrukadmin_user = 'thrukadmin'
-  $thrukadmin_pass = 'thrukadmin'
+  $default_admin   = true
+  $thrukadmin_user = ''
+  $thrukadmin_pass = ''
 }

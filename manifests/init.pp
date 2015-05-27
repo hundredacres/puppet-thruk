@@ -4,13 +4,17 @@
 #
 # === Parameters
 #
+# [*default_admin*]
+#   (boolean) Maintain default admin user credentials
+#   Defaults to true
+#
 # [*thrukadmin_user*]
 #   (string) Username of admin user
-#   Defaults to thrukadmin
+#   No default
 #
 # [*thrukadmin_pass*]
 #   (string) Password of admin user
-#   Defaults to thrukadmin
+#   No default
 #
 # === Variables
 #
@@ -35,6 +39,7 @@ class thruk (
   $core_conf       = $thruk::params::core_conf,
   $obj_check_cmd   = $thruk::params::obj_check_cmd,
   $obj_reload_cmd  = $thruk::params::obj_reload_cmd,
+  $default_admin   = $thruk::params::default_admin,
   $thrukadmin_user = $thruk::params::thrukadmin_user,
   $thrukadmin_pass = $thruk::params::thrukadmin_pass,
 

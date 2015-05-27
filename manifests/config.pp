@@ -11,7 +11,7 @@
 # Sample Usage: include thruk::config
 #
 class thruk::config {
-
+  $default_admin = $thruk::params::default_admin
 
   file {
     $thruk::params::configThrukConf:
@@ -21,16 +21,15 @@ class thruk::config {
       group   => root,
       content => template($thruk::params::configThrukConfTemplate);
   }
-  file { '/etc/thruk/htpasswd':
-    ensure => present,
-    mode   => '0644',
-    owner  => 'apache',
-    group  => 'apache',
-    notify => Exec['regenerate_htpasswd'],
-  }
-  exec { 'regenerate_htpasswd':
-    command => "htpasswd -bm  /etc/thruk/htpasswd ${thruk::params::thrukadmin_user} ${thruk::params::thrukadmin_pass}",
-    unless  => "egrep '^${thruk::params::thrukadmin_user}:' /etc/thruk/htpasswd && grep ${thruk::params::thrukadmin_user}:\$(mkpasswd -S \$(egrep '^${thruk::params::thrukadminuser}:' /etc/thruk/htpasswd |cut -d : -f 2 |cut -c-2) ${thruk::params::thrukadminpass}) /etc/thruk/htpasswd",
-    path    => '/bin:/sbin:/usr/bin:/usr/sbin',
+  if ! $default_admin {
+    exec { 'generate_htpasswd':
+      command => "htpasswd -bm  /etc/thruk/htpasswd ${thruk::params::thrukadmin_user} ${thruk::params::thrukadmin_pass}",
+      unless  => "egrep '^${thruk::params::thrukadmin_user}:' /etc/thruk/htpasswd && grep ${thruk::params::thrukadmin_user}:\$(mkpasswd -S \$(egrep '^${thruk::params::thrukadminuser}:' /etc/thruk/htpasswd |cut -d : -f 2 |cut -c-2) ${thruk::params::thrukadminpass}) /etc/thruk/htpasswd",
+      path    => '/bin:/sbin:/usr/bin:/usr/sbin',
+    }
+    exec { "htpasswd -D ${htpasswd_file} thrukadmin":
+      onlyif => "egrep -q '^thrukadmin:' ${htpasswd_file}",
+      path   => '/bin:/sbin:/usr/bin:/usr/sbin',
+    }
   }
 }
