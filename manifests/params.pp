@@ -1,4 +1,4 @@
-# Class: rkhunter::params
+# Class: thruk::params
 #
 # This module contain the parameters for rkhunter
 #
@@ -10,7 +10,17 @@
 #
 # Sample Usage: include thruk::params
 #
-class thruk::params {
+class thruk::params(
+  $peer_name       = 'Icinga',
+  $peer_type       = 'livestatus',
+  $peer_path       = 'localhost:6557',
+  $core_conf       = '/etc/icinga/icinga.cfg',
+  $obj_check_cmd   = '/etc/init.d/icinga configcheck',
+  $obj_reload_cmd  = '/etc/init.d/icinga reload',
+  $default_admin   = true,
+  $thrukadmin_user = '',
+  $thrukadmin_pass = '',
+){
   # Operating system specific definitions
   case $::osfamily {
     'RedHat' : {
@@ -28,15 +38,4 @@ class thruk::params {
       $linux = false
     }
   }
-
-
-  $peer_name       = 'Icinga'
-  $peer_type       = 'livestatus'
-  $peer_path       = 'localhost:6557'
-  $core_conf       = '/etc/icinga/icinga.cfg'
-  $obj_check_cmd   = '/etc/init.d/icinga configcheck'
-  $obj_reload_cmd  = '/etc/init.d/icinga reload'
-  $default_admin   = true
-  $thrukadmin_user = ''
-  $thrukadmin_pass = ''
 }

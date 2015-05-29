@@ -51,7 +51,7 @@ class thruk (
     include thruk::config
     include thruk::mod_fcgid
     include thruk::service
-  
+
     Class['thruk::mod_fcgid'] ->
     Class['thruk::package']   ->
     Class['thruk::config']    ->
