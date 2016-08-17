@@ -7,6 +7,6 @@
   "issues_url": "https://github.com/karen09/puppet-thruk/issues",
   "operatingsystem_support": [
     { "operatingsystem": "RedHat", "operatingsystemrelease": [ "6.0"] },
-    { "operatingsystem": "CentOS", "operatingsystemrelease": [ "6.0"] },
+    { "operatingsystem": "CentOS", "operatingsystemrelease": [ "6.0"] }
   ]
 }
