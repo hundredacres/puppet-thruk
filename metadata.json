@@ -2,6 +2,7 @@
   "name": "puppet-thruk",
   "version": "0.1.0",
   "author": "karen09",
+  "license": "Apache-2.0",
   "source": "https://github.com/karen09/puppet-thruk.git",
   "project_page": "https://thruk.com",
   "issues_url": "https://github.com/karen09/puppet-thruk/issues",
