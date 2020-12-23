@@ -12,7 +12,8 @@ class thruk::package {
   }
 
   package { $thruk::params::packageCommon:
-    require =>Yumrepo['pulp'],
+    ensure  => present,
+    #require => Yumrepo['pulp'],
   }
 
 }
