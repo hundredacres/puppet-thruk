@@ -47,6 +47,7 @@ class thruk (
 
   if $thruk::params::linux {
 
+    include thruk::repo
     include thruk::package
     include thruk::config
     include thruk::mod_fcgid
