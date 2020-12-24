@@ -2,15 +2,38 @@
   "name": "puppet-thruk",
   "version": "0.1.0",
   "author": "karen09",
+  "summary": "",
   "license": "Apache-2.0",
   "source": "https://github.com/karen09/puppet-thruk.git",
   "project_page": "https://thruk.com",
   "issues_url": "https://github.com/karen09/puppet-thruk/issues",
-  "operatingsystem_support": [
-    { "operatingsystem": "RedHat", "operatingsystemrelease": [ "6.0"] },
-    { "operatingsystem": "CentOS", "operatingsystemrelease": [ "6.0"] }
-  ],
   "dependencies": [
-    { "name": "puppetlabs/stdlib", "version_requirement": ">= 3.2.0 < 5.0.0" }
-  ]
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 3.2.0 < 5.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "6.0"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6.0"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.10.0 < 7.0.0"
+    }
+  ],
+  "pdk-version": "1.18.1",
+  "template-url": "pdk-default#1.18.1",
+  "template-ref": "tags/1.18.1-0-g3d2e75c"
 }
