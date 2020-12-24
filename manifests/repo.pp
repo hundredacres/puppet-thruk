@@ -5,9 +5,10 @@
 # @example
 #   include thruk::repo
 class thruk::repo {
-  yumrepo  {'pulp':
-    baseurl  => 'https://pulp.inuits.eu/upstream/',
-    gpgcheck => '0',
+  yumrepo  {'labs_consol_stable':
     enabled  => '1',
+    baseurl  => 'http://labs.consol.de/repo/stable/rhel7/$basearch',
+    gpgcheck => '0',
+    gpgkey   => 'http://labs.consol.de/repo/stable/RPM-GPG-KEY',
   }
 }
