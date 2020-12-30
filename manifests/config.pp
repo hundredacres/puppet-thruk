@@ -10,7 +10,7 @@
 #
 # Sample Usage: include thruk::config
 #
-class thruk::config {
+class thruk::config inherits thruk {
   $default_admin = $thruk::default_admin
   $htpasswd_file = $thruk::htpasswd_file
 

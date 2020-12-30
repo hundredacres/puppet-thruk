@@ -5,9 +5,9 @@
 # @example
 #   thruk::backend { 'namevar': }
 define thruk::backend (
-  $peer_name       = $thruk::peer_name,
-  $peer_type       = $thruk::peer_type,
-  $peer_path       = $thruk::peer_path,
+  String                                            $peer_name,
+  Enum['livestatus', 'configonly', 'http', 'mysql'] $peer_type,
+  String                                            $peer_path,
 ) {
   ensure_resource('file', "/etc/thruk/thruk_local.d/${title}.conf", deep_merge($peer_name,$peer_type,$peer_path))
 }
