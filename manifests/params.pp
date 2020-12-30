@@ -27,11 +27,11 @@ class thruk::params(
       $linux = true
 
       # Package definition
-      $packageCommon = 'thruk'
+      $packagecommon = 'thruk'
 
       # Config definition
-      $configThrukConf = '/etc/thruk/thruk.conf'
-      $configThrukConfTemplate = 'thruk/etc/thruk.conf.erb'
+      $configthrukconf = '/etc/thruk/thruk.conf'
+      $configthrukconftemplate = 'thruk/etc/thruk.conf.erb'
       $htpasswd_file = '/etc/thruk/htpasswd'
     }
     default  : {

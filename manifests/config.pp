@@ -14,12 +14,12 @@ class thruk::config {
   $default_admin = $thruk::default_admin
   $htpasswd_file = $thruk::htpasswd_file
 
-  file { $thruk::params::configThrukConf:
+  file { $thruk::params::configthrukconf:
     ensure  => present,
     mode    => '0644',
     owner   => root,
     group   => root,
-    content => template($thruk::params::configThrukConfTemplate),
+    content => template($thruk::params::configthrukconftemplate),
     notify  => Service['thruk'],
   }
   unless $default_admin {
