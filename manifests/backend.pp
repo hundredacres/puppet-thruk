@@ -17,6 +17,6 @@ define thruk::backend (
     ensure  => present,
     owner   => apache,
     group   => apache,
-    content => template('thruk/etc/'),
+    content => template('thruk/etc/thruk.backend.erb'),
   })
 }
