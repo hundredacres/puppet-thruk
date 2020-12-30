@@ -20,7 +20,7 @@ class thruk::config inherits thruk {
     owner   => root,
     group   => root,
     content => template($thruk::params::configthrukconftemplate),
-    notify  => Service['thruk'],
+    notify  => Service['httpd'],
   }
   unless $default_admin {
     exec { 'generate_htpasswd':
