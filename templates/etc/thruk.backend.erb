@@ -1,0 +1,19 @@
+<Component Thruk::Backend>
+<peer>
+  name   = <%= @peer_name %>
+  type   = <%= @peer_type %>
+  <options>
+    peer = <%= @peer_path %>
+    <%- if @peer_resource_file -%>
+    resource_file = <%= @peer_resource_file %>
+    <%- end -%>
+  </options>
+  <%- if @core_conf || @obj_check_cmd || @obj_reload_cmd -%>
+  <configtool>
+    core_conf      = <%= @core_conf %>
+    obj_check_cmd  = <%= @obj_check_cmd %>
+    obj_reload_cmd = <%= @obj_reload_cmd %>
+  </configtool>
+  <%- end -%>
+</peer>
+</Component>

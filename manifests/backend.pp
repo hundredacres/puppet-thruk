@@ -8,6 +8,12 @@ define thruk::backend (
   String                                            $peer_name,
   Enum['livestatus', 'configonly', 'http', 'mysql'] $peer_type,
   String                                            $peer_path,
+  Optional[String]                                  $peer_resource_file,
+  Optional[String]                                  $core_conf,
+  Optional[String]                                  $obj_check_cmd,
+  Optional[String]                                  $obj_reload_cmd,
 ) {
-  ensure_resource('file', "/etc/thruk/thruk_local.d/${title}.conf", deep_merge($peer_name,$peer_type,$peer_path))
+  ensure_resource('file', "/etc/thruk/thruk_local.d/${title}.conf", {
+    content => template('thruk/etc/'),
+  })
 }
