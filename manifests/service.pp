@@ -1,7 +1,7 @@
 #= Class: thruk::service
 #
 class thruk::service {
-  service  {'thruk':
+  service  {'httpd':
     ensure   => running,
   }
 }

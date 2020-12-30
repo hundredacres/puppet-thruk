@@ -14,6 +14,9 @@ define thruk::backend (
   Optional[String]                                  $obj_reload_cmd,
 ) {
   ensure_resource('file', "/etc/thruk/thruk_local.d/${title}.conf", {
+    ensure  => present,
+    owner   => apache,
+    group   => apache,
     content => template('thruk/etc/'),
   })
 }
