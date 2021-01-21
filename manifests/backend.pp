@@ -8,10 +8,10 @@ define thruk::backend (
   String                                            $peer_name,
   Enum['livestatus', 'configonly', 'http', 'mysql'] $peer_type,
   String                                            $peer_path,
-  Optional[String]                                  $peer_resource_file,
-  Optional[String]                                  $core_conf,
-  Optional[String]                                  $obj_check_cmd,
-  Optional[String]                                  $obj_reload_cmd,
+  Optional[String]                                  $peer_resource_file = undef,
+  Optional[String]                                  $core_conf          = undef,
+  Optional[String]                                  $obj_check_cmd      = undef,
+  Optional[String]                                  $obj_reload_cmd     = undef,
 ) {
   ensure_resource('file', "/etc/thruk/thruk_local.d/${title}.conf", {
     ensure  => present,
