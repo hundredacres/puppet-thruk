@@ -8,6 +8,7 @@ define thruk::backend (
   String                                            $peer_name,
   Enum['livestatus', 'configonly', 'http', 'mysql'] $peer_type,
   String                                            $peer_path,
+  Optional[Integer]                                 $hidden             = undef,
   Optional[String]                                  $peer_resource_file = undef,
   Optional[String]                                  $core_conf          = undef,
   Optional[String]                                  $obj_check_cmd      = undef,
