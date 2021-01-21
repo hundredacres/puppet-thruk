@@ -597,6 +597,9 @@ cookie_auth_session_cache_timeout = 5
   type   = <%= @peer_type %>
   <options>
     peer = <%= @peer_path %>
+    <%- if @peer_resource_file -%>
+    resource_file = <%= @peer_resource_file %>
+    <%- end -%>
   </options>
   <configtool>
     core_conf      = <%= @core_conf %>
