@@ -2,7 +2,7 @@
 <peer>
   name   = <%= @peer_name %>
   type   = <%= @peer_type %>
-  <%= if @hidden -%>
+  <% if @hidden -%>
   hidden = <%= @hidden %>
   <%- end -%>
   <options>
